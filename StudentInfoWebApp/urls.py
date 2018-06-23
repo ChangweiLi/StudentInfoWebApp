@@ -17,8 +17,14 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path
 
-from StudentInfo.views import index
+from StudentInfo.views import index, \
+    add, delete, query, update
+
 urlpatterns = [
     # path('admin/', admin.site.urls),
-    url(r'^index/$', index)
+    url(r'^index/$', index),
+    url(r'^add/$', add),
+    url(r'^delete/$', delete),
+    url(r'^query/$', query),
+    url(r'^update/$', update)
 ]
