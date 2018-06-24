@@ -12,7 +12,7 @@ def add(request):
     name = request.GET.get('name')
     age = request.GET.get('age')
     learn = request.GET.get('learn')
-    Student.objects.get_or_create(name=name, age=age, learn=learn)
+    # Student.objects.get_or_create(name=name, age=age, learn=learn)
     # print(name)
     # print(age)
     return render(request, 'add.html')
