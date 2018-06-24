@@ -2,9 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>添加学生信息</title>
+    <style type="text/css" ></style>
 </head>
 <body>
+<div class="common">
+    <div class="stu-header">
+        <h2>请在下列信息栏中填入需要添加的学生基本信息</h2>
+    </div>
+    <div class="stu-center">
+        <div class = "stu-form">
+            <label>姓名</label>
+            <input type="text" id="name" maxlength="20"><br>
+            <label>年龄</label>
+            <input type="text" id="age"><br>
+            <label>学科</label>
+            <input type="text" id="learn"><br>
+            <input type="submit" id="add-btn" onclick="add_stu()"><br>
+            <button id="reset-btn" onclick="reset_add()" >重置</button><br>
+        </div>
+        <a href="/index/">返回主页</a>
+    </div>
+    <div class="stu-footer">
 
+    </div>
+</div>
 </body>
+<script>
+
+    function add_stu() {
+        var name = document.getElementById("name").value;
+        var age = document.getElementById("age").value;
+        var learn = document.getElementById("learn").value;
+        window.location.href = "http://127.0.0.1:8001/add?name="+name+"&age="+age+"&learn="+learn;
+    }
+    
+    function reset_add() {
+        
+    }
+</script>
 </html>

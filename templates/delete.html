@@ -2,9 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>删除学生信息</title>
 </head>
 <body>
+<div class="common">
+    <div class="stu-header">
+        <h2>请输入你想要删除的学生的个人信息</h2>
+    </div>
+    <div class="stu-center">
+        <div class = "stu-form">
+            <label>姓名</label>
+            <input type="text" id="name" maxlength="20"><br>
+            <label>年龄</label>
+            <input type="text" id="age"><br>
+            <label>学科</label>
+            <input type="text" id="learn"><br>
+            <input type="submit" id="add-btn" onclick="delete_stu()"><br>
+            <button id="reset-btn" >重置</button><br>
+        </div>
+        <a href="/index/">返回主页</a>
+    </div>
+    <div class="stu-footer">
 
+    </div>
+</div>
 </body>
+<script>
+    function delete_stu() {
+
+    }
+</script>
 </html>

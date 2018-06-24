@@ -2,9 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>查询学生信息</title>
 </head>
 <body>
+<div class="common">
+    <div class="stu-header">
+        <h2>请输入你想要查询的学生的个人信息</h2>
+    </div>
+    <div class="stu-center">
+        <h3>请填写查询的学生个人信息</h3>
+        <div class = "stu-form">
+            <label>姓名</label>
+            <input type="text" id="name" maxlength="20"><br>
+            <label>年龄</label>
+            <input type="text" id="age"><br>
+            <label>学科</label>
+            <input type="text" id="learn"><br>
+            <input type="submit" id="quert-btn" onclick="query_stu()"><br>
+            <button id="reset-btn" >重置</button><br>
+        </div>
+        <a href="/index/">返回主页</a>
+    </div>
+    <div class="stu-footer">
 
+    </div>
+</div>
 </body>
+<script>
+    function query_stu() {
+
+    }
+</script>
 </html>
