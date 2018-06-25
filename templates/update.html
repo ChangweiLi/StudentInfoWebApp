@@ -2,34 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>更改学生信息</title>
+    <title>更新学生信息</title>
+    <link rel="stylesheet" href="/static/css/common.css">
 </head>
 <body>
 <div class="common">
     <div class="stu-header">
-        <h2>更改学生的个人信息页面</h2>
+        <h1>请在下列信息栏中填入需要更新的学生基本信息</h1>
     </div>
     <div class="stu-center">
         <div class = "stu-form">
-            <label>姓名</label>
-            <input type="text" id="name" maxlength="20"><br>
-            <label>年龄</label>
-            <input type="text" id="age"><br>
-            <label>学科</label>
-            <input type="text" id="learn"><br>
-            <input type="submit" id="add-btn" onclick="delete_stu()"><br>
-            <button id="reset-btn" >重置</button><br>
+            <div class = "stu-line">
+                <label>姓名</label>
+                <input type="text" id="name" maxlength="20">
+            </div>
+            <div class = "stu-line">
+                <label>年龄</label>
+                <input type="text" id="age">
+            </div>
+            <div class = "stu-line">
+                <label>学科</label>
+                <input type="text" id="learn">
+            </div>
+            <button id="reset-btn" onclick="reset()">重置</button>
+            <input type="submit" id="update-btn" onclick="update_stu()" class="stu-btn">
         </div>
-        <a href="/index/">返回主页</a>
+        <div style="margin-top: 20px;position: center;text-align: center">
+                   <a href="/index/">返回主页</a>
+        </div>
     </div>
     <div class="stu-footer">
-
+        <div class="f-center"><p>版权归 ChangWei 技术支持QQ:1369990551</p></div>
     </div>
 </div>
 </body>
 <script>
-    function delete_stu() {
 
+    //点击提交发送get请求到数据库 type为1则是添加到数据库，用于判定到底是跳转页面还是添加数据库，因为是同一个url
+    function update_stu() {
+        var name = document.getElementById("name").value;
+        var age = document.getElementById("age").value;
+        var learn = document.getElementById("learn").value;
+        window.location.href = "http://127.0.0.1:8001/add?name="+name+"&age="+age+"&learn="+learn+"&type1=1";
+    }
+
+    //重置按钮-将文本域设置为空
+    function reset() {
+        document.getElementById("name").value = "";
+        document.getElementById("age").value = "";
+        document.getElementById("learn").value = "";
     }
 </script>
 </html>

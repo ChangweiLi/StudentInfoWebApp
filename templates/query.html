@@ -3,34 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>查询学生信息</title>
+    <link rel="stylesheet" href="/static/css/common.css">
 </head>
 <body>
 <div class="common">
     <div class="stu-header">
-        <h2>请输入你想要查询的学生的个人信息</h2>
+        <h1>请在下列信息栏中填入需要查询的学生基本信息</h1>
     </div>
     <div class="stu-center">
-        <h3>请填写查询的学生个人信息</h3>
         <div class = "stu-form">
-            <label>姓名</label>
-            <input type="text" id="name" maxlength="20"><br>
-            <label>年龄</label>
-            <input type="text" id="age"><br>
-            <label>学科</label>
-            <input type="text" id="learn"><br>
-            <input type="submit" id="quert-btn" onclick="query_stu()"><br>
-            <button id="reset-btn" >重置</button><br>
+            <div class = "stu-line">
+                <label>姓名</label>
+                <input type="text" id="name" maxlength="20">
+            </div>
+            <button id="reset-btn" onclick="reset()">重置</button>
+            <input type="submit" id="query-btn" onclick="query_stu()" class="stu-btn">
         </div>
-        <a href="/index/">返回主页</a>
+        <div style="margin-top: 20px;position: center;text-align: center">
+                   <a href="/index/">返回主页</a>
+        </div>
     </div>
     <div class="stu-footer">
-
+         <div class="f-center"><p>版权归 ChangWei 技术支持QQ:1369990551</p></div>
     </div>
 </div>
 </body>
 <script>
-    function query_stu() {
 
+    //点击提交发送get请求到数据库 type为1则是添加到数据库，用于判定到底是跳转页面还是添加数据库，因为是同一个url
+    function query_stu() {
+        var name = document.getElementById("name").value;
+        window.location.href = "http://127.0.0.1:8001/query?name="+name+"&type1=1";
+    }
+
+    //重置按钮-将文本域设置为空
+    function reset() {
+        document.getElementById("name").value = "";
+        document.getElementById("age").value = "";
+        document.getElementById("learn").value = "";
     }
 </script>
 </html>
