@@ -11,20 +11,81 @@
         <h1>请在下列信息栏中填入需要查询的学生基本信息</h1>
     </div>
     <div class="stu-center">
-        <div class = "stu-form">
-            <div class = "stu-line">
+        <div class="stu-form">
+            <div class="stu-line">
                 <label>姓名</label>
-                <input type="text" id="name" maxlength="20">
+                <input type="text" id="name" maxlength="20"><br>
+                <button id="query-btn" onclick="query_stu()" class="stu-btn">查询</button>
             </div>
-            <button id="reset-btn" onclick="reset()">重置</button>
-            <input type="submit" id="query-btn" onclick="query_stu()" class="stu-btn">
         </div>
+        <div class="stu-line">
+            {% if stu is not None %}
+          <h4>name = {{ stu.name }} <br> age = {{ stu.age }} <br> learn = {{ stu.learn }} </h4>
+            {%  endif %}
+        </div>
+{#        <div class="stu-table" id="div_stu_table">#}
+{#            <h4>name = {{ stu.name }} <br> age = {{ stu.age }} <br> learn = {{ stu.learn }} </h4>#}
+{#            表格测试 #}
+{#            <table summary="查询结果列表">#}
+{#            <caption>查询结果列表</caption> <!-- caption 标签必须紧随 table 标签之后。您只能对每个表格定义一个标题。通常这个标题会被居中于表格之上。 -->#}
+{#            <col></col><col></col><col></col><col class="price" align="right"></col><col></col>#}
+{#            <thead>#}
+{#                <tr>#}
+{#                    <th >Title</th>#}
+{#                    <th >ID</th>#}
+{##}
+{#                    <th >Country</th>#}
+{#                    <th >Price</th>#}
+{#                    <th >Download</th>#}
+{#                </tr>#}
+{#            </thead>#}
+{#            <tbody>#}
+{#                <tr >#}
+{#                    <th >Tom</th>#}
+{#                    <td>1213456</td>#}
+{##}
+{#                    <td>Germany</td>#}
+{#                    <td>$3.12</td>#}
+{#                    <td>Download</td>#}
+{#                </tr>#}
+{#                <tr class="odd">#}
+{#                    <th >Chance</th>#}
+{#                    <td>1213457</td>#}
+{##}
+{#                    <td>Germany</td>#}
+{#                    <td>$123.34</td>#}
+{#                    <td>Download</td>#}
+{#                </tr>#}
+{#                <tr >#}
+{#                    <th >John</th>#}
+{#                    <td>1213458</td>#}
+{##}
+{#                    <td>Germany</td>#}
+{#                    <td>$34.37</td>#}
+{#                    <td>Download</td>#}
+{#                </tr>#}
+{#                <tr class="odd">#}
+{#                    <th >oKathleen</th>#}
+{#                    <td>1213459</td>#}
+{#                    <td>Germany</td>#}
+{#                    <td>$23.67</td>#}
+{#                    <td>Download</td>#}
+{#                </tr>#}
+{#                </tbody>#}
+{#            <tfoot>#}
+{#                <tr>#}
+{#                    <th >Total</th>#}
+{#                    <td colspan="4">4 books</td>#}
+{#                </tr>#}
+{#            </tfoot>#}
+{#</table>#}
+{#        </div>#}
         <div style="margin-top: 20px;position: center;text-align: center">
-                   <a href="/index/">返回主页</a>
+            <a href="/index/">返回主页</a>
         </div>
     </div>
     <div class="stu-footer">
-         <div class="f-center"><p>版权归 ChangWei 技术支持QQ:1369990551</p></div>
+        <div class="f-center"><p>版权归 ChangWei 技术支持QQ:1369990551</p></div>
     </div>
 </div>
 </body>
@@ -33,14 +94,8 @@
     //点击提交发送get请求到数据库 type为1则是添加到数据库，用于判定到底是跳转页面还是添加数据库，因为是同一个url
     function query_stu() {
         var name = document.getElementById("name").value;
-        window.location.href = "http://127.0.0.1:8001/query?name="+name+"&type1=1";
+        window.location.href = "http://127.0.0.1:8001/query?name=" + name + "&type1=1";
     }
 
-    //重置按钮-将文本域设置为空
-    function reset() {
-        document.getElementById("name").value = "";
-        document.getElementById("age").value = "";
-        document.getElementById("learn").value = "";
-    }
 </script>
 </html>
