@@ -13,19 +13,20 @@
     <div class="stu-center">
         <div class = "stu-form">
             <div class = "stu-line">
-                <label>姓名</label>
+                <label>需要修改的学生姓名<p style="color: red">（*）</p></label>
                 <input type="text" id="name" maxlength="20">
             </div>
             <div class = "stu-line">
-                <label>年龄</label>
+                <label>新的年龄</label>
                 <input type="text" id="age">
             </div>
             <div class = "stu-line">
-                <label>学科</label>
+                <label>新的学科</label>
                 <input type="text" id="learn">
             </div>
             <button id="reset-btn" onclick="reset()">重置</button>
-            <input type="submit" id="update-btn" onclick="update_stu()" class="stu-btn">
+            <button  id="update-btn" onclick="update_stu()" class="stu-btn">确认修改</button>
+            <p style="color: #67BD2A">{{ msg }}</p>
         </div>
         <div style="margin-top: 20px;position: center;text-align: center">
                    <a href="/index/">返回主页</a>
@@ -43,7 +44,7 @@
         var name = document.getElementById("name").value;
         var age = document.getElementById("age").value;
         var learn = document.getElementById("learn").value;
-        window.location.href = "http://127.0.0.1:8001/add?name="+name+"&age="+age+"&learn="+learn+"&type1=1";
+        window.location.href = "http://127.0.0.1:8001/update?name="+name+"&age="+age+"&learn="+learn+"&type1=1";
     }
 
     //重置按钮-将文本域设置为空

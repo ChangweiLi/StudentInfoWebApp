@@ -14,72 +14,37 @@
         <div class="stu-form">
             <div class="stu-line">
                 <label>姓名</label>
-                <input type="text" id="name" maxlength="20"><br>
+                <input type="text" id="name" maxlength="20" placeholder="输入'all'查询所有">
                 <button id="query-btn" onclick="query_stu()" class="stu-btn">查询</button>
             </div>
         </div>
         <div class="stu-line">
             {% if stu is not None %}
-          <h4>name = {{ stu.name }} <br> age = {{ stu.age }} <br> learn = {{ stu.learn }} </h4>
-            {%  endif %}
+                <h4>name = {{ stu.name }} <br> age = {{ stu.age }} <br> learn = {{ stu.learn }} </h4>
+            {% endif %}
         </div>
-{#        <div class="stu-table" id="div_stu_table">#}
-{#            <h4>name = {{ stu.name }} <br> age = {{ stu.age }} <br> learn = {{ stu.learn }} </h4>#}
-{#            表格测试 #}
-{#            <table summary="查询结果列表">#}
-{#            <caption>查询结果列表</caption> <!-- caption 标签必须紧随 table 标签之后。您只能对每个表格定义一个标题。通常这个标题会被居中于表格之上。 -->#}
-{#            <col></col><col></col><col></col><col class="price" align="right"></col><col></col>#}
-{#            <thead>#}
-{#                <tr>#}
-{#                    <th >Title</th>#}
-{#                    <th >ID</th>#}
-{##}
-{#                    <th >Country</th>#}
-{#                    <th >Price</th>#}
-{#                    <th >Download</th>#}
-{#                </tr>#}
-{#            </thead>#}
-{#            <tbody>#}
-{#                <tr >#}
-{#                    <th >Tom</th>#}
-{#                    <td>1213456</td>#}
-{##}
-{#                    <td>Germany</td>#}
-{#                    <td>$3.12</td>#}
-{#                    <td>Download</td>#}
-{#                </tr>#}
-{#                <tr class="odd">#}
-{#                    <th >Chance</th>#}
-{#                    <td>1213457</td>#}
-{##}
-{#                    <td>Germany</td>#}
-{#                    <td>$123.34</td>#}
-{#                    <td>Download</td>#}
-{#                </tr>#}
-{#                <tr >#}
-{#                    <th >John</th>#}
-{#                    <td>1213458</td>#}
-{##}
-{#                    <td>Germany</td>#}
-{#                    <td>$34.37</td>#}
-{#                    <td>Download</td>#}
-{#                </tr>#}
-{#                <tr class="odd">#}
-{#                    <th >oKathleen</th>#}
-{#                    <td>1213459</td>#}
-{#                    <td>Germany</td>#}
-{#                    <td>$23.67</td>#}
-{#                    <td>Download</td>#}
-{#                </tr>#}
-{#                </tbody>#}
-{#            <tfoot>#}
-{#                <tr>#}
-{#                    <th >Total</th>#}
-{#                    <td colspan="4">4 books</td>#}
-{#                </tr>#}
-{#            </tfoot>#}
-{#</table>#}
-{#        </div>#}
+        <div class="stu-table" id="div_stu_table">
+            {#            <h4>name = {{ stu.name }} <br> age = {{ stu.age }} <br> learn = {{ stu.learn }} </h4>#}
+            {#            表格测试#}
+            <table summary="查询结果列表" class="stu-table">
+                <caption>学生信息查询结果列表</caption> <!-- caption 标签必须紧随 table 标签之后。您只能对每个表格定义一个标题。通常这个标题会被居中于表格之上。 -->
+                <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>姓名</th>
+                    <th>年龄</th>
+                    <th>学科</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th>{{ stu.name }}</th>
+                    <td>{{ stu.age }}</td>
+                    <td>{{ stu.learn }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
         <div style="margin-top: 20px;position: center;text-align: center">
             <a href="/index/">返回主页</a>
         </div>

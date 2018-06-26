@@ -15,16 +15,18 @@
             <div class = "stu-line">
                 <label>姓名</label>
                 <input type="text" id="name" maxlength="20">
-                <button  id="query-btn" onclick="query_stu()" class="stu-btn">查询记录</button>
+                <button  id="query-btn" onclick="query_stu()" class="stu-btn">删除记录</button>
             </div>
+            <p style="color: #67BD2A">{{ msg }}</p>
         </div>
-        <div class class="stu-table" id="div_stu_table">
-            {%  if stu is not None %}
-                <h3 style="text-align: center">你删除的学生记录信息如下：</h3><br>
-                <h4 style="text-align: center">name = {{ stu.name }}   age = {{ stu.age }}   learn = {{ stu.learn }} </h4>
-                <button  id="delete-btn" onclick="delete_submit()">确认删除</button>
-            {% endif %}
-        </div>
+
+{#        <div class class="stu-table" id="div_stu_table">#}
+{#            {%  if stu is not None %}#}
+{#                <h3 style="text-align: center">你删除的学生记录信息如下：</h3><br>#}
+{#                <h4 style="text-align: center">name = {{ stu.name }}   age = {{ stu.age }}   learn = {{ stu.learn }} </h4>#}
+{#                <button  id="delete-btn" onclick="delete_submit()">确认删除</button>#}
+{#            {% endif %}#}
+{#        </div>#}
         <div style="margin-top: 20px;position: center;text-align: center">
                    <a href="/index/">返回主页</a>
         </div>
@@ -41,12 +43,12 @@
      var name ="";
     function query_stu() {
         name = document.getElementById("name").value;
-        window.location.href = "http://127.0.0.1:8001/delete?name="+name+"&type1=1";
+        window.location.href = "http://127.0.0.1:8001/delete?name="+name+"&type1=2";
     }
 
      function delete_submit() {
         window.location.href = "http://127.0.0.1:8001/delete?name="+name+"&type1=2";
-        document.getElementById("div_stu_table").
+        {#document.getElementById("div_stu_table").#}
     }
 </script>
 </html>
